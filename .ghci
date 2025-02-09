@@ -1,0 +1,4 @@
+:set -package ansi-terminal
+:set -package containers
+:set -package directory 
+:set -package filepath

@@ -129,8 +129,13 @@ run args = do
   p <- S.lookupEnv env
   case p of
     Nothing -> fatal $ "can't find " ++ fmtEnvVarRef env ++ " in environment"
-    Just val -> if null exes then analyzePath opts (splitOn (==';') val) -- concatMap (\s -> s ++ "\n")
-                  else searchForExes opts (splitOn (==';') val) exes
+    Just val
+      | null exes -> analyzePath opts p_tokens
+      | otherwise -> searchForExes opts p_tokens exes
+      where p_tokens = splitOn isPathSep val
+
+isPathSep :: Char -> Bool
+isPathSep = (== searchPathSeparator)
 
 -- *HPath> splitOn (==';') "a;b;c;;d;"
 -- ["a","b","c","","d"]
