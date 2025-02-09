@@ -14,12 +14,13 @@ import qualified System.IO as S
 import qualified System.IO.Error as S
 import qualified System.Info as S
 
-import qualified System.Console.ANSI as SCA -- from ansi-terminal-0.6
+import qualified System.Console.ANSI as SCA -- from ansi-terminal
 
 -- VERSION HISTORY:
---   * 1.0.0 < 6/19: original version lists paths
---   * 1.0.1 6/19: added search mode (greatly expanded help, formally added a version string)
-vERSION_STRING = "1.0.1"
+vERSION_STRING = "1.0.2" -- 2025/02/09 minor fix to enable Linux (and tested on WSL)
+-- vERSION_STRING = "1.0.1" -- ????/06/19: added search mode (greatly expanded help, formally added a version string)
+-- vERSION_STRING = "1.0.0" -- ????/06/19: original version lists paths
+-- 2015 when this begun
 
 -------
 -- TODO:
